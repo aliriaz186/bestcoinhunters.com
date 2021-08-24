@@ -181,6 +181,10 @@ class UserController extends Controller
             if ($request->search == -1){
                 $coins = Coin::where('status',1)->OrderBy('upvotes', 'DESC')->offset($request->offset)->limit($request->limit)->get();
 
+            }else if ($request->search == -5){
+                $date = \Carbon\Carbon::today()->subDays(7);
+                $coins = Coin::where('status',1)->where('created_at', '>=', $date)->OrderBy('upvotes', 'DESC')->offset($request->offset)->limit($request->limit)->get();
+
             }else{
                 $coins = Coin::where('status',1)->where('name', 'like', '%' . $request->search . '%')->OrderBy('upvotes', 'DESC')->offset($request->offset)->limit($request->limit)->get();
             }

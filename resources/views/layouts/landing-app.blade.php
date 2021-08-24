@@ -17,7 +17,7 @@
     <title>{{env('APP_NAME')}}</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{url('')}}/assets/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="{{url('')}}/logo.ico" type="image/png">
 
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="{{url('')}}/assets/css/bootstrap.min.css">
@@ -319,8 +319,8 @@
             <div class="d-flex">
                 <ul class="navbar-nav mr-auto" style="margin-top: 0px">
                     <li class="nav-item" style="margin-left: 20px">
-                        <a href="#"><img src="{{url('telegram.svg')}}" style="width: 35px;height: 35px"></a>
-                        <a href="#"><img src="{{url('twitter.svg')}}" style="width: 35px;height: 35px;margin-left: 10px"></a>
+                        <a href="https://t.me/BestCoinHunters" target="_blank"><img src="{{url('telegram.svg')}}" style="width: 35px;height: 35px"></a>
+                        <a href="https://twitter.com/BestCoinHunters"  target="_blank"><img src="{{url('twitter.svg')}}" style="width: 35px;height: 35px;margin-left: 10px"></a>
                     </li>
                     <li class="nav-item" style="margin-left: 20px">
                         <a class="btn btnsimple3 my-2 my-sm-0" style="width: 120px" href="{{url('addcoin')}}">Add a Coin</a>
@@ -352,10 +352,10 @@
 <footer class="mainfooter">
     <div class="footerinner">
         <img src="{{url('logo.png')}}" alt="">
-        <h4 class="footermaintext mt-4"><a href="#" style="text-decoration: none;color: inherit">Need to boost your marketing?</a></h4>
+        <h4 class="footermaintext mt-4"><a href="{{url('promote-stats')}}" style="text-decoration: none;color: inherit">Need to boost your marketing?</a></h4>
         <div class="mt-3">
-                <a href="#"><img src="{{url('telegram.svg')}}" style="width: 35px;height: 35px"></a>
-                <a href="#"><img src="{{url('twitter.svg')}}" style="width: 35px;height: 35px;margin-left: 10px"></a>
+                <a href="https://t.me/BestCoinHunters" target="_blank"><img src="{{url('telegram.svg')}}" style="width: 35px;height: 35px"></a>
+                <a href="https://twitter.com/BestCoinHunters" target="_blank"><img src="{{url('twitter.svg')}}" style="width: 35px;height: 35px;margin-left: 10px"></a>
 
         </div>
        <div class="mt-3">

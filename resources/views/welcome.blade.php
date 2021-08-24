@@ -55,15 +55,19 @@
                 }
                 .mainbannerlink img{
                     display: block;
-                    max-width: 80vw;
+                    max-width: 101vw;
                     margin-top: 1rem;
                     border-radius: 1rem;
+                    height: 6.8rem;
+                    /* max-width: 900px; */
+                    width: 1000px;
                 }
             @media screen and (max-width: 798px){
                 .mainbannerlink img {
-                    max-width: 98vw;
+                    max-width: 96vw;
                     margin-top: .5rem;
                     border-radius: .5rem;
+                    height: 2.5rem;
                 }
             }
 
@@ -129,7 +133,7 @@
         .imgslider{
             border-radius: 2rem;
             max-width: 100%;
-            height: 200px;
+            height: 180px;
             /*height: calc(11vw - 1rem);*/
             /*object-fit: contain;*/
             /*margin: auto;*/
@@ -161,7 +165,7 @@
         }
 
         .trclass{
-            height: 6rem;
+            height: 4rem;
             cursor: pointer;
             background-color: #e9f0f8;
             color: #000;
@@ -177,8 +181,8 @@
         }
 
         .customupvotebtn{
-            height: 3.5rem;
-            min-width: 9rem;
+            height: 3rem;
+            min-width: 6.5rem;
             cursor: pointer;
             color: #28a745;
             border: 1px solid #28a745;
@@ -193,7 +197,7 @@
 
         .seemorebtn{
             width: 100%;
-            height: 5rem;
+            height: 4.2rem;
             color: #6e5eeb;
             background-color: #e9f0f8;
             cursor: pointer;
@@ -232,8 +236,8 @@
 
         .divlogoimg{
             margin-right: 1rem;
-            height: 3.6rem;
-            width: 3.6rem;
+            height: 3rem;
+            width: 3rem;
             -webkit-flex-shrink: 0;
             flex-shrink: 0;
             object-fit: cover;
@@ -241,12 +245,12 @@
         }
 
         .searchcustom{
-            height: calc(2.4rem + 3vh);
-            background-color: inherit;
+            height: 3.5rem;
+            background-color: #181d23;
             color: #fff;
             padding-left: 2rem;
-            font-size: 1.8rem;
-            width: 25rem;
+            font-size: 1rem;
+            width: 20rem;
             border-radius: 1rem;
             outline: none;
             border: none;
@@ -278,6 +282,42 @@
             flex-grow: 1;
             white-space: nowrap;
             padding-right: 2rem;
+        }
+
+        .btnsimplecustom{
+            padding: 5px;
+            font-size: 15px;
+            border-radius: 1rem;
+            text-align: center;
+            height: 3.5rem;
+            background-color: #181d23;
+            color: #fff;
+            /* width: 50rem; */
+            outline: none;
+            font-weight: bold;
+            border: 1px solid #9488f0;
+
+        }
+
+        .btnsimplecustom2{
+            padding: 5px;
+            font-size: 15px;
+            border-radius: 1rem;
+            text-align: center;
+            height: 3.5rem;
+            background-color: #696c84;
+            color: #fff;
+            /* width: 50rem; */
+            outline: none;
+            font-weight: bold;
+            border: 1px solid #9488f0;
+        }
+        .btnsimplecustom:hover{
+           color: white;
+            background-color: #696c84;
+        }
+        .btnsimplecustom2:hover{
+           color: white;
         }
 
 
@@ -328,19 +368,19 @@
 
     <div class="tablehead mt-4" style="max-width: 1500px;margin: 0 auto">
         <table class="tablecoins">
-            <thead style="height: 5rem;
+            <thead style="height: 3.5rem;
     background-color: #181d23;">
             <tr style="background-color: #0b0b0b;color: white">
                 <th class="text-center">💎 Promoted coins</th>
                 <th class="text-center smallscreenoff">Symbol</th>
-                <th class="text-center">Market Cap</th>
+                <th class="text-center smallscreenoff">Market Cap</th>
                 <th class="text-center smallscreenoff">Launch</th>
                 <th class="text-center">Upvotes</th>
             </tr>
             </thead>
             <tbody>
             @foreach($promoted as $coin)
-                <tr class="trclass" >
+                <tr class="trclass">
                     <td class="tdclass" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coin->id}}`">
                         <div class="divlogoclass">
                             <picture>
@@ -352,7 +392,7 @@
                     <td class="tdclass smallscreenoff" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coin->id}}`">
                         {{$coin->symbol}}
                     </td>
-                    <td class="tdclass" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coin->id}}`">
+                    <td class="tdclass smallscreenoff" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coin->id}}`">
                         @if(!empty($coin->market_cap))
                             {{$coin->market_cap}}
                         @else
@@ -376,24 +416,34 @@
     </div>
 
 
-    <div style="max-width: 1500px;margin: 0 auto">
-        <div class="mainviewseach input-box-custom2" style="margin-top: 50px;width: 350px">
-            <img src="{{url('search.svg')}}" alt="" style="    transform: scaleX(-1);
-    height: 2.6rem;">
+
+
+    <div class="d-flex flex-wrap" style="max-width: 1500px;margin: 0 auto;margin-top: 30px">
+        <div style="margin-left: 10px;margin-top: 10px">
+            <button onclick="todayHot()" id="todayhot" class="btn btnsimplecustom2" style="width: 170px">🔥 Today's Hot</button>
+        </div>
+        <div style="margin-left: 10px;;margin-top: 10px">
+            <button onclick="newHot()" id="newhot"  class="btn btnsimplecustom" style="width: 130px;">💙 New</button>
+        </div>
+        <div style="margin-left: 10px;;margin-top: 10px">
             <input type="text" id="searchcustom" class="searchcustom" name="search" placeholder="Search.." style="width: 200px">
         </div>
+
+{{--        <div class="mainviewseach input-box-custom2" style="margin-top: 50px;width: 350px">--}}
+{{--            <input type="text" id="searchcustom" class="searchcustom" name="search" placeholder="Search.." style="width: 200px">--}}
+{{--        </div>--}}
 {{--        <div class="righttext">--}}
 {{--            Coins can be upvoted every 24h--}}
 {{--        </div>--}}
     </div>
     <div class="tablehead mt-2" style="max-width: 1500px;margin: 0 auto">
         <table class="tablecoins">
-            <thead style="height: 5rem;
+            <thead style="height: 3.5rem;
     background-color: #181d23;">
                 <tr style="background-color: #0b0b0b;color: white">
                     <th class="text-center">Asset</th>
                     <th class="text-center smallscreenoff">Symbol</th>
-                    <th class="text-center">Market Cap</th>
+                    <th class="text-center smallscreenoff">Market Cap</th>
                     <th class="text-center smallscreenoff">Launch</th>
                     <th class="text-center">Upvotes</th>
                 </tr>
@@ -462,6 +512,22 @@
                     callback.apply(context, args);
                 }, ms || 0);
             };
+        }
+
+        function todayHot(){
+           document.getElementById('todayhot').style.background = '#696c84';
+           document.getElementById('newhot').style.background = '#181d23';
+            document.getElementById('tbodyId').innerHTML = '';
+            resetLimit();
+            getFilteredData();
+        }
+
+        function newHot(){
+            document.getElementById('todayhot').style.background = '#181d23';
+            document.getElementById('newhot').style.background = '#696c84';
+            document.getElementById('tbodyId').innerHTML = '';
+            resetLimit();
+            getFilteredData(-5);
         }
 
 
@@ -614,6 +680,11 @@
         let limit = 3;
         let offsetValue = -3;
 
+        function resetLimit(){
+            limit = 3;
+            offsetValue = -3;
+        }
+
         function getFilteredData(statt = -1){
 
             // let influencer = document.getElementById('influencer').value;
@@ -625,8 +696,7 @@
             // let sort_type = document.getElementById('sort_type').value;
             // let sort_ascending = document.getElementById('sort_ascending').value;
             if (statt !== -1){
-                limit = 3;
-                offsetValue = -3;
+               resetLimit();
             }
             offsetValue = offsetValue + limit;
             let formData = new FormData();
@@ -703,7 +773,7 @@
                 tr.classList.add('trclass');
                 td1.classList.add('tdclass');
                 td2.classList.add('tdclass', 'smallscreenoff');
-                td3.classList.add('tdclass');
+                td3.classList.add('tdclass', 'smallscreenoff');
                 td4.classList.add('tdclass', 'smallscreenoff');
                 td5.classList.add('tdclass');
                 img.src = entries[i].logo;

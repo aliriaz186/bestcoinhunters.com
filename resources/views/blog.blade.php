@@ -189,7 +189,30 @@
             color: #fff;
             background-color: #9488f0;
         }
+        @media screen and (max-width: 600px) {
 
+
+            .resppaddingclass{
+                padding: 2px!important;
+            }
+            .resppaddingclass2{
+                padding: 1rem!important;
+            }
+            .respmarginclass {
+                margin-left: 0px!important;
+            }
+            .add-coin-btn{
+                font-size: 1rem!important;
+            }
+        }
+
+        .resppaddingclass{
+            padding: 30px;
+        }
+
+        .resppaddingclass2{
+            padding: 3rem
+        }
 
     </style>
 
@@ -198,13 +221,13 @@
 
     <section  style="padding-top: 2px;">
         {{--        <div class="banner__bg"></div>--}}
-        <div class="container" style="padding: 30px">
+        <div class="container resppaddingclass">
             <div style="margin-bottom: 20px">
                 <a href="{{url('')}}" style="color: white;font-size: 15px"><img style="height: 1.6rem; margin-right: 1rem" src="{{url('goback.svg')}}"> Back To Main</a>
             </div>
             <div id="add-coin-form" action="{{url('save-coin')}}" method="post"  onsubmit="return saveCoin()">
                 @csrf
-                <div style="background: #181d23;padding: 3rem;border-radius: 2rem;color: white;margin: 0 auto;max-width: 1200px">
+                <div class="resppaddingclass2" style="background: #181d23;border-radius: 2rem;color: white;margin: 0 auto;max-width: 1200px">
                     @foreach($blogs as $blog)
                         <div style="margin-top: 50px;margin-bottom: 50px">
                             <h2 style="color: white;text-align: left;margin-top: 20px">{!! $blog->title!!}</h2>

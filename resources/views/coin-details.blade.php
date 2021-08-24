@@ -55,15 +55,19 @@
         }
         .mainbannerlink img{
             display: block;
-            max-width: 80vw;
+            max-width: 101vw;
             margin-top: 1rem;
             border-radius: 1rem;
+            height: 6.8rem;
+            /* max-width: 900px; */
+            width: 1000px;
         }
         @media screen and (max-width: 798px){
             .mainbannerlink img {
-                max-width: 98vw;
+                max-width: 96vw;
                 margin-top: .5rem;
                 border-radius: .5rem;
+                height: 2.5rem;
             }
         }
 
@@ -161,7 +165,7 @@
         }
 
         .trclass{
-            height: 6rem;
+            height: 4rem;
             cursor: pointer;
             background-color: #e9f0f8;
             color: #000;
@@ -178,7 +182,7 @@
 
         .customupvotebtn{
             height: 3.5rem;
-            min-width: 9rem;
+            min-width: 6.5rem;
             cursor: pointer;
             color: #28a745;
             border: 1px solid #28a745;
@@ -187,13 +191,13 @@
         }
 
         .customupvotebtn1{
-            height: 3.5rem;
-            min-width: 9rem;
+            height: 3rem;
+            min-width: 7.5rem;
             cursor: pointer;
             color: #28a745;
             border: 1px solid #28a745;
             border-radius: .5rem;
-            background: black;
+            background: #e9f0f8;
         }
 
         .customupvotebtn:hover{
@@ -203,7 +207,7 @@
 
         .seemorebtn{
             width: 100%;
-            height: 5rem;
+            height: 4.2rem;
             color: #6e5eeb;
             background-color: #e9f0f8;
             cursor: pointer;
@@ -222,6 +226,20 @@
             .smallscreenoff{
                 display: none;
             }
+
+            .resppaddingclass{
+                padding: 2px!important;
+            }
+            .respmarginclass {
+                margin-left: 0px!important;
+            }
+        }
+
+        .resppaddingclass{
+            padding: 30px;
+        }
+        .respmarginclass{
+            margin-left: 5px;
         }
 
         .divlogoclass{
@@ -242,8 +260,8 @@
 
         .divlogoimg{
             margin-right: 1rem;
-            height: 3.6rem;
-            width: 3.6rem;
+            height: 3rem;
+            width: 3rem;
             -webkit-flex-shrink: 0;
             flex-shrink: 0;
             object-fit: cover;
@@ -300,12 +318,12 @@
         }
 
         .inimg{
-            height: 6rem;
-            width: 6rem;
+            height: 4rem;
+            width: 4rem;
             margin-right: 2rem;
         }
         .inh2{
-            font-weight: 500;
+            font-weight: 200;
             font-size: 2.8rem;
             margin: 0;
             white-space: nowrap;
@@ -452,38 +470,40 @@
             </div>
         </div>
 
-        <div style="padding: 30px">
-            <div class="container" style="margin-bottom: 20px;max-width: 1500px">
-                <a href="{{url('')}}" style="color: white;font-size: 15px"><img style="height: 1.6rem; margin-right: 1rem" src="{{url('goback.svg')}}"> Back To Main</a>
-            </div>
+        <div class="resppaddingclass">
+{{--            <div class="container" style="margin-bottom: 20px;max-width: 1500px">--}}
+{{--                <a href="{{url('')}}" style="color: white;font-size: 15px"><img style="height: 1.6rem; margin-right: 1rem" src="{{url('goback.svg')}}"> Back To Main</a>--}}
+{{--            </div>--}}
             <div id="add-coin-form" action="{{url('save-coin')}}" method="post"  onsubmit="return saveCoin()">
                 @csrf
                 <div style="background: #181d23;padding: 3rem;border-radius: 2rem;color: white;margin: 0 auto;max-width: 1500px">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="divinfirstrow">
-                                <picture>
-                                    <img class="inimg" src="{{$coin->logo}}">
-                                </picture>
-                                <div>
-                                    <h2 class="inh2" style="color: white;font-size: 30px;text-transform: capitalize!important;margin-bottom: 10px">{{$coin->name}}</h2>
-                                    <div class="indiv2">
-                                        <span class="inspan">{{$coin->symbol}}</span>
-                                        <div class="indiv3">
-                                            <div class="indiv4">
-                                                <span class="invotes">VOTES</span>
-                                                <span>{{$coin->upvotes}}</span>
-                                            </div>
-                                            <div class="intoday">
-                                                <span class="spantoday">Today</span>
-                                                <span>0</span>
-                                            </div>
+                    <div class="row" style="margin-bottom: 20px">
+                        <div class="col-md-8" style="margin-top: 20px;">
+                            <div class="d-flex flex-wrap">
+                                <div style=";margin-top: 10px">
+                                    <picture>
+                                        <img class="inimg" src="{{$coin->logo}}">
+                                    </picture>
+                                </div>
+                                <div style=";margin-top: 10px">
+                                    <h2 class="inh2" style="color: white;font-size: 22px;text-transform: capitalize!important;margin-bottom: 10px">{{$coin->name}}</h2>
+                                    <div class="d-flex flex-wrap">
+                                        <div style="padding: 10px;background-color: #9488f0;border-radius: 1rem;width: 150px;text-align: center;margin-top: 10px" class="respmarginclass">
+                                            <span style="font-size: 16px;font-weight: bold;color: white;;text-align: center">{{$coin->symbol}}</span>
+                                        </div>
+                                        <div style="padding: 10px;background-color: #232a32;border-radius: 1rem;width: 150px;text-align: center;margin-top: 10px" class="respmarginclass">
+                                            <span style="font-size: 13px;color: white;text-align: center">Votes</span>
+                                            <span style="margin-left: 5px;font-size: 16px;font-weight: bold;color: white;text-align: center">{{$coin->upvotes}}</span>
+                                        </div>
+                                        <div style="padding: 10px;background-color: #232a32;border-radius: 1rem;width: 150px;text-align: center;margin-top: 10px" class="respmarginclass">
+                                            <span style="font-size: 13px;color: white;text-align: center">Today</span>
+                                            <span style="margin-left: 5px;font-size: 16px;font-weight: bold;color: white;text-align: center">{{$coin->upvotes}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3" style="margin-top: 20px;">
                             <div>
                                 <a class="inlink" href="{{$coin->website}}" target="_blank" rel="noopener noreferrer nofollow">Visit Website</a>
                             </div>
@@ -498,7 +518,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="border-top: 1px solid #9488f0;border-bottom: 1px solid #9488f0;padding: 30px;max-width: 800px">
+                    <div class="row resppaddingclass" style="border-top: 1px solid #9488f0;border-bottom: 1px solid #9488f0;max-width: 800px">
                             <div class="col-md-4">
                                 <span style="margin-left: 1rem">Market cap:</span>
                                 <span style="margin-left: 1rem">${{$coin->market_cap}}</span>
@@ -516,7 +536,7 @@
                     <p style="margin-top: 25px;color: white">
                         {!! $coin->description  !!}
                     </p>
-                    <div style="margin: 0 auto;margin-top: 50px;max-width: 250px">
+                    <div style="margin: 0 auto;margin-top: 50px;max-width: 120px">
                         @if($upVoted == 1)
                             <button id="upvtebtn-{{$coin->id}}" class="customupvotebtn1" style="background: #28a745;color: white"><span style="margin-right: 1rem">🚀</span><span>VOTED</span></button>
 
@@ -541,12 +561,12 @@
 
         <div class="tablehead mt-4" style="max-width: 1500px;margin: 0 auto">
             <table class="tablecoins">
-                <thead style="height: 5rem;
+                <thead style="height: 3.5rem;
     background-color: #181d23;">
                 <tr style="background-color: #0b0b0b;color: white">
                     <th class="text-center">💎 Promoted coins</th>
                     <th class="text-center smallscreenoff">Symbol</th>
-                    <th class="text-center">Market Cap</th>
+                    <th class="text-center smallscreenoff">Market Cap</th>
                     <th class="text-center smallscreenoff">Launch</th>
                     <th class="text-center">Upvotes</th>
                 </tr>
@@ -565,7 +585,7 @@
                         <td class="tdclass smallscreenoff" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coinIn->id}}`">
                             {{$coinIn->symbol}}
                         </td>
-                        <td class="tdclass" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coinIn->id}}`">
+                        <td class="tdclass smallscreenoff" onclick="window.location.href = `{{env('APP_URL')}}/coin/{{$coinIn->id}}`">
                             @if(!empty($coinIn->market_cap))
                                 {{$coinIn->market_cap}}
                             @else

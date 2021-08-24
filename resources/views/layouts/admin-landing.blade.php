@@ -17,7 +17,7 @@
     <title>{{env('APP_NAME')}}</title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{url('')}}/assets/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="{{url('')}}/logo.ico" type="image/png">
 
     <!--====== Bootstrap css ======-->
     <link rel="stylesheet" href="{{url('')}}/assets/css/bootstrap.min.css">

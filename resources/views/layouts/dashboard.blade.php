@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Home</title>
+    <link rel="shortcut icon" href="{{url('')}}/logo.ico" type="image/png">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <meta charset="UTF-8">
