@@ -55,12 +55,12 @@
                 }
                 .mainbannerlink img{
                     display: block;
-                    max-width: 101vw;
+                    max-width: 85vw;
                     margin-top: 1rem;
                     border-radius: 1rem;
                     height: 6.8rem;
                     /* max-width: 900px; */
-                    width: 1000px;
+                    /*width: 1000px;*/
                 }
             @media screen and (max-width: 798px){
                 .mainbannerlink img {
@@ -68,6 +68,90 @@
                     margin-top: .5rem;
                     border-radius: .5rem;
                     height: 2.5rem;
+                }
+            }
+
+            @media screen and (min-width: 1000px){
+                .mainbannerlink img {
+                    margin-top: .5rem;
+                    border-radius: .5rem;
+                    height: 3rem;
+                }
+                .slidercont{
+                    max-width: 850px!important;
+                }
+                .tablehead{
+                    max-width: 800px!important;;
+                }
+                .tablehead2{
+                    max-width: 800px!important;;
+                }
+            }
+
+
+            @media screen and (min-width: 1200px){
+                .mainbannerlink img {
+                    margin-top: .5rem;
+                    border-radius: .5rem;
+                    height: 4.5rem;
+                }
+                .slidercont{
+                    max-width: 900px!important;
+                }
+                .tablehead{
+                    max-width: 850px!important;;
+                }
+                .tablehead2{
+                    max-width: 850px!important;;
+                }
+            }
+
+            @media screen and (min-width: 1400px){
+                .mainbannerlink img {
+                    margin-top: .5rem;
+                    border-radius: .5rem;
+                    height: 5.5rem;
+                }
+                .slidercont{
+                    max-width: 1000px!important;;
+                }
+                .tablehead{
+                    max-width: 900px!important;;
+                }
+                .tablehead2{
+                    max-width: 900px!important;;
+                }
+            }
+            @media screen and (min-width: 1600px){
+                .mainbannerlink img {
+                    margin-top: .5rem;
+                    border-radius: .5rem;
+                    height: 6rem;
+                }
+                .slidercont{
+                    max-width: 1200px!important;;
+                }
+                .tablehead{
+                    max-width: 1100px!important;;
+                }
+                .tablehead2{
+                    max-width: 1100px!important;;
+                }
+            }
+            @media screen and (min-width: 1800px){
+                .mainbannerlink img {
+                    margin-top: .5rem;
+                    border-radius: .5rem;
+                    height: 6.8rem;
+                }
+                .slidercont{
+                    max-width: 1500px!important;;
+                }
+                .tablehead{
+                    max-width: 1500px!important;;
+                }
+                .tablehead2{
+                    max-width: 1500px!important;;
                 }
             }
 
@@ -134,7 +218,7 @@
             border-radius: 2rem;
             max-width: 100%;
             height: 180px;
-            /*height: calc(11vw - 1rem);*/
+            height: calc(11vw - 1rem);
             /*object-fit: contain;*/
             /*margin: auto;*/
         }
@@ -155,6 +239,8 @@
             min-width: 80vw;
             overflow: hidden;
             background-color: #e9f0f8;
+            max-width: 1500px;
+            margin: 0 auto;
         }
 
         .tablecoins{
@@ -418,7 +504,7 @@
 
 
 
-    <div class="d-flex flex-wrap" style="max-width: 1500px;margin: 0 auto;margin-top: 30px">
+    <div class="tablehead2 d-flex flex-wrap" style="max-width: 1500px;margin: 0 auto;margin-top: 30px">
         <div style="margin-left: 10px;margin-top: 10px">
             <button onclick="todayHot()" id="todayhot" class="btn btnsimplecustom2" style="width: 170px">🔥 Today's Hot</button>
         </div>
@@ -436,7 +522,7 @@
 {{--            Coins can be upvoted every 24h--}}
 {{--        </div>--}}
     </div>
-    <div class="tablehead mt-2" style="max-width: 1500px;margin: 0 auto">
+    <div class="tablehead mt-2">
         <table class="tablecoins">
             <thead style="height: 3.5rem;
     background-color: #181d23;">
