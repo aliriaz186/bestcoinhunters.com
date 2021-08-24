@@ -518,6 +518,9 @@
                             </div>
                         </div>
                     </div>
+                    <div style="margin-top: 15px;margin-bottom: 15px">
+                        <span style="background: #465160;padding: 8px;border-radius: 5px;font-size: 16px;text-align: center">Binance Smart Chain: {{$coin->address}}</span>
+                    </div>
                     <div class="row resppaddingclass" style="border-top: 1px solid #9488f0;border-bottom: 1px solid #9488f0;max-width: 800px">
                             <div class="col-md-4">
                                 <span style="margin-left: 1rem">Market cap:</span>
