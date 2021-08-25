@@ -297,15 +297,15 @@
 
 <body style="background: #192C38">
 
-<div class="preloader" id="preloader">
-    <div class="three ">
-        <div class="loader" id="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
+{{--<div class="preloader" id="preloader">--}}
+{{--    <div class="three ">--}}
+{{--        <div class="loader" id="loader">--}}
+{{--            <span></span>--}}
+{{--            <span></span>--}}
+{{--            <span></span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <nav class="navbar navbar-expand-lg navbar-light" style="background: #181d23!important;padding-inline-start: 60px">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{url('')}}"><img src="{{url('logo.png')}}" ></a>

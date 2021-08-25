@@ -69,6 +69,12 @@
                     border-radius: .5rem;
                     height: 2.5rem;
                 }
+                .slidercont{
+                    max-width: 1500px!important;
+                }
+                .imgslider{
+                    height: 180px!important;
+                }
             }
 
             @media screen and (min-width: 1000px){
@@ -416,13 +422,13 @@
     {{--        <div class="banner__bg"></div>--}}
         <div class="mainbanners">
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/1" alt="banner">
+                <img src="{{url('banner-get')}}/1" alt="banner" class="lazyclass" loading="lazy">
             </a>
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/2" alt="banner">
+                <img src="{{url('banner-get')}}/2" alt="banner" class="lazyclass" loading="lazy">
             </a>
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/3" alt="banner">
+                <img src="{{url('banner-get')}}/3" alt="banner" class="lazyclass" loading="lazy">
             </a>
         </div>
 
@@ -435,7 +441,7 @@
                             <div class="col-md-4" style="margin-left: 8px!important;margin-right: 8px!important;">
                                 <div class="card" style="background: none">
                                     <div class="card-img" >
-                                        <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider">
+                                        <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider lazyclass" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -589,6 +595,8 @@
 
 
 
+
+
         function delay(callback, ms) {
             var timer = 0;
             return function() {
@@ -617,7 +625,9 @@
         }
 
 
-
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     alert('contentloaded')
+        // });
 
         $(document).ready(function(){
             let items = document.querySelectorAll('.carousel .carousel-item')
@@ -648,6 +658,12 @@
             // $('#category').select2();
             // document.getElementById('previousbtn').setAttribute('disabled', true);
 
+            // var lazyloadImages = document.querySelectorAll("img.lazyclass");
+            // setTimeout(function (){
+            //     lazyloadImages.forEach(function (img) {
+            //         img.src = img.dataset.src;
+            //     });
+            // },500);
 
         });
 

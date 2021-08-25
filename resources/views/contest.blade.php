@@ -235,7 +235,7 @@
                     <h3 style="color: white;text-align: center;margin-top: 10px">{!!$contest->place4!!}</h3>
                     <p style="color: white;text-align: center;margin-top: 25px">{!!$contest->footer!!}</p>
                     <div style="margin: 0 auto;max-width: 600px;margin-top: 50px">
-                        <img src="{{url('contest-file')}}">
+                        <img src="{{url('contest-file')}}" loading="lazy">
                     </div>
                 </div>
             </form>

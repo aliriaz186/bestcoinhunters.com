@@ -232,7 +232,7 @@
                     <p style="color: white;text-align: left;margin-top: 20px">{!! $promote->text1 !!}</p>
                     <h3 style="color: white;text-align: left;margin-top: 20px">{!! $promote->subheading !!}</h3>
                     <div>
-                        <img src="{{url('promote-file')}}" style="width: 100%;height: 400px">
+                        <img src="{{url('promote-file')}}" style="width: 100%;height: 400px" loading="lazy">
                     </div>
                     <h3 style="color: white;text-align: center;margin-top: 50px">{!! $promote->heading2 !!}</h3>
                     <div class="row" style="margin: 0 auto;max-width: 800px;margin-top: 25px">

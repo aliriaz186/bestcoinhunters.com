@@ -58,3 +58,5 @@ Route::get('/delete-blog/{id}', "\App\Http\Controllers\AdminController@deleteBlo
 Route::get('/coin-details/{id}', "\App\Http\Controllers\AdminController@coinDetails");
 Route::post('/updatecoininfo', "\App\Http\Controllers\AdminController@updateCoinInfo");
 Route::get('/coin/{id}', "\App\Http\Controllers\UserController@getCoin");
+Route::get('/change-password', "\App\Http\Controllers\AdminController@changepassword");
+Route::post('changepasswordpost', "\App\Http\Controllers\AdminController@changepasswordpost");

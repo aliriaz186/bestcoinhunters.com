@@ -62,12 +62,29 @@
             /* max-width: 900px; */
             /*width: 1000px;*/
         }
+        .respmaxwidth{
+            margin: 0 auto;
+            max-width: 1500px;
+        }
         @media screen and (max-width: 798px){
             .mainbannerlink img {
                 max-width: 96vw;
                 margin-top: .5rem;
                 border-radius: .5rem;
                 height: 2.5rem;
+            }
+            .imgslider{
+                height: 180px!important;
+            }
+            .slidercont{
+                max-width: 1500px!important;
+            }
+            .pricemargintop{
+                margin-top: 10px;
+            }
+            .respallbtnslinks{
+                margin: 0 auto;
+                max-width: 250px;
             }
         }
 
@@ -83,7 +100,7 @@
             .tablehead{
                 max-width: 800px!important;;
             }
-            .tablehead2{
+            .respmaxwidth{
                 max-width: 800px!important;;
             }
         }
@@ -101,7 +118,7 @@
             .tablehead{
                 max-width: 850px!important;;
             }
-            .tablehead2{
+            .respmaxwidth{
                 max-width: 850px!important;;
             }
         }
@@ -118,7 +135,7 @@
             .tablehead{
                 max-width: 900px!important;;
             }
-            .tablehead2{
+            .respmaxwidth{
                 max-width: 900px!important;;
             }
         }
@@ -134,7 +151,7 @@
             .tablehead{
                 max-width: 1100px!important;;
             }
-            .tablehead2{
+            .respmaxwidth{
                 max-width: 1100px!important;;
             }
         }
@@ -150,10 +167,12 @@
             .tablehead{
                 max-width: 1500px!important;;
             }
-            .tablehead2{
+            .respmaxwidth{
                 max-width: 1500px!important;;
             }
         }
+
+
 
 
         .mainslider{
@@ -277,16 +296,21 @@
         }
 
         .customupvotebtn1{
-            height: 3rem;
-            min-width: 7.5rem;
+            height: 5rem;
+            min-width: 15rem;
             cursor: pointer;
+            font-size: 2rem;
             color: #28a745;
             border: 1px solid #28a745;
             border-radius: .5rem;
-            background: #e9f0f8;
+            background: #181d23;
         }
 
         .customupvotebtn:hover{
+            background: #28a745;
+            color: white;
+        }
+        .customupvotebtn1:hover{
             background: #28a745;
             color: white;
         }
@@ -322,7 +346,7 @@
         }
 
         .resppaddingclass{
-            padding: 30px;
+            padding: 10px;
         }
         .respmarginclass{
             margin-left: 5px;
@@ -485,11 +509,19 @@
 
         .inlink{
             border: 1px solid #9488f0;
-            margin-bottom: 1rem;
+            margin-bottom: 5px;
             border-radius: .5rem;
-            padding: .5rem;
-            width: 20rem;
+            padding: 0.5rem;
+             width: 220px!important;
             text-align: center;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            background: #232a32;
+        }
+        .inlink:hover{
+            background: #9488f0;
+            color: white;
         }
         .line1{
             -webkit-flex-direction: row;
@@ -520,13 +552,13 @@
         {{--        <div class="banner__bg"></div>--}}
         <div class="mainbanners">
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/1" alt="banner">
+                <img src="{{url('banner-get')}}/1" alt="banner" loading="lazy">
             </a>
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/2" alt="banner">
+                <img src="{{url('banner-get')}}/2" alt="banner" loading="lazy">
             </a>
             <a class="mainbannerlink" target="_blank"  href="#">
-                <img src="{{url('banner-get')}}/3" alt="banner">
+                <img src="{{url('banner-get')}}/3" alt="banner" loading="lazy">
             </a>
         </div>
 
@@ -539,7 +571,7 @@
                                 <div class="col-md-4" style="margin-left: 8px!important;margin-right: 8px!important;">
                                     <div class="card" style="background: none">
                                         <div class="card-img" >
-                                            <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider">
+                                            <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -556,7 +588,7 @@
             </div>
         </div>
 
-        <div class="resppaddingclass">
+        <div class="resppaddingclass respmaxwidth">
 {{--            <div class="container" style="margin-bottom: 20px;max-width: 1500px">--}}
 {{--                <a href="{{url('')}}" style="color: white;font-size: 15px"><img style="height: 1.6rem; margin-right: 1rem" src="{{url('goback.svg')}}"> Back To Main</a>--}}
 {{--            </div>--}}
@@ -588,44 +620,44 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3" style="margin-top: 20px;">
-                            <div>
-                                <a class="inlink" href="{{$coin->website}}" target="_blank" rel="noopener noreferrer nofollow">Visit Website</a>
+                            <div style="margin-top: 25px;margin-bottom: 25px">
+                                <span style="background: #465160;padding: 8px;border-radius: 5px;font-size: 16px;text-align: center">Binance Smart Chain: {{$coin->address}}</span>
                             </div>
-                            <div style="margin-top: 23px">
-                                <a class="inlink" href="{{$coin->telegram}}" target="_blank" rel="noopener noreferrer nofollow">Join Telegram</a>
-                            </div>
-                            <div style="margin-top: 23px">
-                                <a class="inlink" href="{{$coin->twitter}}" target="_blank" rel="noopener noreferrer nofollow">Follow Twitter</a>
-                            </div>
-                            <div style="margin-top: 23px">
-                                <a class="inlink" href="{{$coin->discord}}" target="_blank" rel="noopener noreferrer nofollow">Join Discord</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 15px;margin-bottom: 15px">
-                        <span style="background: #465160;padding: 8px;border-radius: 5px;font-size: 16px;text-align: center">Binance Smart Chain: {{$coin->address}}</span>
-                    </div>
-                    <div class="row resppaddingclass" style="border-top: 1px solid #9488f0;border-bottom: 1px solid #9488f0;max-width: 800px">
-                            <div class="col-md-4">
-                                <span style="margin-left: 1rem">Market cap:</span>
-                                <span style="margin-left: 1rem">${{$coin->market_cap}}</span>
-                            </div>
-                        <div class="col-md-4">
-                                <span style="margin-left: 1rem">Price:</span>
-                                <span style="margin-left: 1rem">${{$coin->price}}</span>
-                            </div>
-                        <div class="col-md-4">
-                                <span style="margin-left: 1rem">Launch:</span>
-                                <span style="margin-left: 1rem">{{$coin->launch_date}}</span>
-                        </div>
+                            <div class="row resppaddingclass" style="border-top: 1px solid #9488f0;border-bottom: 1px solid #9488f0;">
+                                <div class="col-md-4 pricemargintop">
+                                    <span style="margin-left: 0.5rem">Market cap:</span>
+                                    <span style="margin-left: 0.5rem;font-weight: bold;font-size: 14px">${{$coin->market_cap}}</span>
+                                </div>
+                                <div class="col-md-4 pricemargintop">
+                                    <span style="margin-left: 0.5rem">Price:</span>
+                                    <span style="margin-left: 0.5rem;font-weight: bold;font-size: 14px">${{$coin->price}}</span>
+                                </div>
+                                <div class="col-md-4 pricemargintop">
+                                    <span style="margin-left: 0.5rem">Launch:</span>
+                                    <span style="margin-left: 0.5rem;font-weight: bold;font-size: 14px">{{$coin->launch_date}}</span>
+                                </div>
 
+                            </div>
+                            <p style="margin-top: 25px;color: #a1a5aa">
+                                {!! $coin->description  !!}
+                            </p>
+                        </div>
+                        <div class="col-md-3 respallbtnslinks" style="margin-top: 20px;">
+                            <div style="width: 250px">
+                                <button class="inlink" href="{{$coin->website}}" target="_blank" rel="noopener noreferrer nofollow">Visit Website</button>
+                            </div>
+                            <div style="margin-top: 5px;width: 250px">
+                                <button class="inlink" href="{{$coin->telegram}}" target="_blank" rel="noopener noreferrer nofollow">Join Telegram</button>
+                            </div>
+                            <div style="margin-top: 5px;width: 250px">
+                                <button class="inlink" href="{{$coin->twitter}}" target="_blank" rel="noopener noreferrer nofollow">Follow Twitter</button>
+                            </div>
+                            <div style="margin-top: 5px;width: 250px">
+                                <button class="inlink" href="{{$coin->discord}}" target="_blank" rel="noopener noreferrer nofollow">Join Discord</button>
+                            </div>
+                        </div>
                     </div>
-                    <p style="margin-top: 25px;color: white">
-                        {!! $coin->description  !!}
-                    </p>
-                    <div style="margin: 0 auto;margin-top: 50px;max-width: 120px">
+                    <div style="margin: 0 auto;margin-top: 50px;max-width: 250px">
                         @if($upVoted == 1)
                             <button id="upvtebtn-{{$coin->id}}" class="customupvotebtn1" style="background: #28a745;color: white"><span style="margin-right: 1rem">🚀</span><span>VOTED</span></button>
 
@@ -635,6 +667,9 @@
                         @endif
 
                     </div>
+                    <p style="margin-top: 20px;color: #a1a5aa;text-align: center">
+                        You can vote once every 24 hours
+                    </p>
 {{--                    <h3 style="color: white;text-align: center;margin-top: 20px">{{$earn->heading}}</h3>--}}
 {{--                    <p style="color: white;text-align: center;margin-top: 25px">{{$earn->text1}}</p>--}}
 {{--                    <p style="color: white;text-align: center;margin-top: 25px">{{$earn->text2}}</p>--}}

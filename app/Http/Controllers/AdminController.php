@@ -263,6 +263,25 @@ class AdminController extends Controller
         }
     }
 
+    public function changepassword(){
+        return view('dashboard.changepassword');
+    }
+
+    public function changepasswordpost(Request $request){
+        try {
+            if ($request->password != $request->conpassword){
+                return redirect()->back()->withErrors(['Password mismatch']);
+            }
+            $admin = Admin::where('id', 1)->first();
+            $admin->password = $request->password;
+            $admin->update();
+            session()->flash('msg', 'Password updated successfully!');
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors(['Server Error, Please try again later']);
+        }
+    }
+
     public function getSlide($id){
         $banner = Slide::where('id', $id)->first();
         $file =  base_path('/data') . '/files/' . $banner->image;

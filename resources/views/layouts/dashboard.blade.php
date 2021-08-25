@@ -146,6 +146,12 @@ $user =  \App\Models\Admin::where('id',\Illuminate\Support\Facades\Session::get(
                                 <span>Blogs</span>
                             </a>
                         </li>
+                        <li  class="{{\Request::is('change-password') ? 'bgactivelink' : ''}}" style="border: 1px solid white;border-bottom: 0px">
+                            <a class="{{\Request::is('change-password') ? 'coloractivelink' : ''}}" href="{{url('change-password')}}">
+                                {{--                                <i class="fas fa-users"></i>--}}
+                                <span>Change Password</span>
+                            </a>
+                        </li>
 
                         <li class="" style="border: 1px solid white;">
                             <a href="{{ url('logout-user') }}">
