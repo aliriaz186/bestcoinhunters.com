@@ -47,6 +47,7 @@
                     <tr>
                         <th>#</th>
                         <th>Slide</th>
+                        <th>URL</th>
                         <th>Options</th>
                     </tr>
 
@@ -56,6 +57,14 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td><img src="{{url('slide-get')}}/{{$slide->id}}" style="width: 200px;height: 100px"></td>
+                        <td>
+                            <form action="{{url('addsliderurl')}}" method="post">
+                                @csrf
+                                <input type="text" name="url"  class="form-control" value="{{$slide->url ?? ''}}">
+                                <input type="hidden" value="{{$slide->id}}" name="slideId">
+                                <button class="btn btn-sm btn-success">UPDATE</button>
+                            </form>
+                        </td>
                         <td><a class="btn btn-danger" href="{{url('delete-slide')}}/{{$slide->id}}">DELETE</a></td>
                     </tr>
                 @endforeach

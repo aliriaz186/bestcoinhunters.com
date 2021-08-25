@@ -547,17 +547,19 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
+    <?php
+    $bannerAll = \App\Models\Banner::all();
+    ?>
     <section  style="padding-top: 2px;">
         {{--        <div class="banner__bg"></div>--}}
         <div class="mainbanners">
-            <a class="mainbannerlink" target="_blank"  href="#">
+            <a class="mainbannerlink" target="_blank"   href="{{$bannerAll[0]->url}}">
                 <img src="{{url('banner-get')}}/1" alt="banner" loading="lazy">
             </a>
-            <a class="mainbannerlink" target="_blank"  href="#">
+            <a class="mainbannerlink" target="_blank"   href="{{$bannerAll[1]->url}}">
                 <img src="{{url('banner-get')}}/2" alt="banner" loading="lazy">
             </a>
-            <a class="mainbannerlink" target="_blank"  href="#">
+            <a class="mainbannerlink" target="_blank"   href="{{$bannerAll[2]->url}}">
                 <img src="{{url('banner-get')}}/3" alt="banner" loading="lazy">
             </a>
         </div>
@@ -571,7 +573,7 @@
                                 <div class="col-md-4" style="margin-left: 8px!important;margin-right: 8px!important;">
                                     <div class="card" style="background: none">
                                         <div class="card-img" >
-                                            <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider" loading="lazy">
+                                            <img src="{{url('slide-get')}}/{{$slide->id}}" class="imgslider" loading="lazy"  onclick="window.open(`{{$slide->url}}`)">
                                         </div>
                                     </div>
                                 </div>

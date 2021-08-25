@@ -10,7 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="google-site-verification" content="2SP2_nt5Xs44HePfZpIwPqQGg-PT_46gUBhPhhwvzgo" />
 
 
     <!--====== Title ======-->
@@ -296,7 +296,15 @@
 </head>
 
 <body style="background: #192C38">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NX56RP4EDF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NX56RP4EDF');
+</script>
 {{--<div class="preloader" id="preloader">--}}
 {{--    <div class="three ">--}}
 {{--        <div class="loader" id="loader">--}}

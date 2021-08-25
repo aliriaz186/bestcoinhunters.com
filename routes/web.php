@@ -60,3 +60,4 @@ Route::post('/updatecoininfo', "\App\Http\Controllers\AdminController@updateCoin
 Route::get('/coin/{id}', "\App\Http\Controllers\UserController@getCoin");
 Route::get('/change-password', "\App\Http\Controllers\AdminController@changepassword");
 Route::post('changepasswordpost', "\App\Http\Controllers\AdminController@changepasswordpost");
+Route::post('addsliderurl', "\App\Http\Controllers\AdminController@addsliderurl");

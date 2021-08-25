@@ -40,7 +40,8 @@ class AdminController extends Controller
     }
 
     public function banners(){
-        return view('dashboard.banners');
+
+        return view('dashboard.banners')->with(['bannersAll' => Banner::all()]);
     }
 
 
@@ -108,6 +109,19 @@ class AdminController extends Controller
                 $banner->banner = $name;
                 $banner->update();
             }
+
+            $banner = $banner = Banner::where('status', 1)->first();
+            $banner->url = $request->url1;
+            $banner->update();
+
+            $banner = $banner = Banner::where('status', 2)->first();
+            $banner->url = $request->url2;
+            $banner->update();
+
+            $banner = $banner = Banner::where('status', 3)->first();
+            $banner->url = $request->url3;
+            $banner->update();
+
             session()->flash('msg', 'Banner updated successfully!');
             return redirect()->back();
 
@@ -276,6 +290,19 @@ class AdminController extends Controller
             $admin->password = $request->password;
             $admin->update();
             session()->flash('msg', 'Password updated successfully!');
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors(['Server Error, Please try again later']);
+        }
+    }
+
+
+    public function addsliderurl(Request $request){
+        try {
+           $slide = Slide::where('id', $request->slideId)->first();
+            $slide->url = $request->url;
+            $slide->update();
+            session()->flash('msg', 'URL updated successfully!');
             return redirect()->back();
         }catch (\Exception $exception){
             return redirect()->back()->withErrors(['Server Error, Please try again later']);

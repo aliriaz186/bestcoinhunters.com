@@ -21,7 +21,7 @@
         <div class="px-5">
             <form method="post" action="{{url('savebanners')}}" enctype="multipart/form-data">
                 @csrf
-            <div>
+            <div style="border: 1px solid lightgray;padding: 20px">
                 <p style="font-weight: bold">Banner 1</p>
                 <div class="row">
                     <div class="col-md-6">
@@ -32,9 +32,26 @@
                         <button type="button" class="btn btn-outline-success" onclick="document.getElementById('banner1').click()">Change Banner 1</button>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <div >
+                                @csrf
+                                <input type="hidden" name="urlnumber" value="1">
+                                <input type="text" class="form-control" name="url1" value="{{$bannersAll[0]->url ?? ''}}"  id="url" placeholder="e.g. https://facebook.com">
+                                <button type="submit" id="url1form" style="display: none"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <button type="button" class="btn btn-success" onclick="document.getElementById('url1form').click()">UPDATE URL</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-top: 30px">
+            <div style="margin-top: 30px;border: 1px solid lightgray;padding: 20px">
                 <p style="font-weight: bold">Banner 2</p>
                 <div class="row">
                     <div class="col-md-6">
@@ -45,9 +62,27 @@
                         <button  type="button" class="btn btn-outline-success" onclick="document.getElementById('banner2').click()">Change Banner 2</button>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <div>
+                                @csrf
+                                <input type="hidden" name="urlnumber" value="2">
+                                <input type="text" class="form-control" name="url2" value="{{$bannersAll[1]->url ?? ''}}"  id="url" placeholder="e.g. https://facebook.com" >
+                                <button type="submit" id="url2form" style="display: none"></button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <button type="button" class="btn btn-success" onclick="document.getElementById('url2form').click()">UPDATE URL</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-top: 30px">
+            <div style="margin-top: 30px;border: 1px solid lightgray;padding: 20px">
                 <p style="font-weight: bold">Banner 3</p>
                 <div class="row">
                     <div class="col-md-6">
@@ -56,6 +91,24 @@
                     <div class="col-md-6">
                         <input type="file" name="banner3" style="display: none" id="banner3"  onchange="document.getElementById('bannerform').click()">
                         <button type="button" class="btn btn-outline-success" onclick="document.getElementById('banner3').click()">Change Banner 3</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <div>
+                                @csrf
+                                <input type="hidden" name="urlnumber" value="3">
+                                <input type="text" class="form-control" name="url3" value="{{$bannersAll[2]->url ?? ''}}"  id="url" placeholder="e.g. https://facebook.com">
+                                <button type="submit" id="url3form" style="display: none"></button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-top: 10px">
+                            <button type="button" class="btn btn-success" onclick="document.getElementById('url3form').click()">UPDATE URL</button>
+                        </div>
                     </div>
                 </div>
             </div>
